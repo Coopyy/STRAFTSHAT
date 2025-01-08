@@ -37,7 +37,7 @@ namespace STRAFTSHAT
             MainCamera = LocalController.playerCamera;
             LocalPlayer = new PlayerCache(LocalController.gameObject);
 
-            if (LocalPlayer.isValid)
+            if (LocalPlayer.IsValid)
             {
                 PlayerPickup playerPickup = LocalController.GetComponent<PlayerPickup>();
                 if (playerPickup)
@@ -52,12 +52,12 @@ namespace STRAFTSHAT
             // ideally hook when players are initialized and destroyed to keep track of them
             foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Player"))
             {
-                if (gameObject == LocalPlayer.gameObject)
+                if (gameObject == LocalPlayer.GameObject)
                     continue;
 
                 PlayerCache player = new PlayerCache(gameObject);
 
-                if (player.isValid)
+                if (player.IsValid)
                     _players.Add(player);
             }
         }
