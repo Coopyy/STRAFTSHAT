@@ -40,7 +40,7 @@ namespace STRAFTSHAT
 
         public void Draw(Camera camera)
         {
-            if (!gameObject?.transform || !collider || !playerHealth)
+            if (gameObject == null || gameObject.transform == null || camera == null || collider == null || playerHealth == null)
                 return;
 
             Vector3 screenPos = camera.WorldToScreenPoint(gameObject.transform.position - OFFSET);
